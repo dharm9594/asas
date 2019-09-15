@@ -1,0 +1,540 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="GCBC_NextGen.View.PP.Sites" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../../Images/sitel-logo_Title.ico" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../Content/icons.css?v=1" />
+    <link rel="stylesheet" href="../../Content/tether.min.css?v=1" />
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css?v=1" />
+    <link rel="stylesheet" href="../../Content/bootstrap-grid.min.css?v=1" />
+    <link rel="stylesheet" href="../../Content/bootstrap-reboot.min.css?v=1" />
+    <link rel="stylesheet" href="../../Content/dropdown.css?v=1" />
+    <link rel="stylesheet" href="../../Content/data-tables.bootstrap4.min.css?v=1" />
+    <link rel="stylesheet" href="../../Content/theme.css?v=1" />
+    <link rel="stylesheet" href="../../Content/site.css?v=1" type="text/css" />
+    <link rel="stylesheet" href="../../Content/font-awesome.min.css?v=1" />
+    <link rel="stylesheet" href="../../Content/customIcons.css?v=1" />
+    <link rel="stylesheet" href="../../Content/scrollBar.css?v=1" />
+
+    <script src="../../Scripts/customIcons.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onkeydown="hideNav(event);">
+
+    <form id="form1" runat="server">
+
+        <section class="menu cid-rAi4VhcfsS z3" once="menu" id="menu2-0">
+            <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm red_brB">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="menu-logo width85">
+                    <div class="navbar-brand">
+                        <span class="navbar-logo">
+                            <a href="/View/PP/Home.aspx">
+                                <img src="../../images/logo-sitel.png" alt="Sitel" style="height: 3rem;">
+                            </a>
+                        </span>
+                        <span class="nav-item ml-4">
+                            <a class="nav-link link text-black display-4" title="Search" onclick="openNav('searchBar')" href="javascript:void(0);">
+                                <svg width="30" height="30" viewBox="0 0 32.453 32.453">
+                                    <use class="searchIcon" href="../../Content/custom_icons/searchIcon.svg#searchIcon"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <span class="nav-item ml-4" id="liSearch">
+                            <div class="input-group">
+                                <input type="text" id="txtSearch" class="form-control input-sm" onkeydown="return (event.keyCode!=13);" autocomplete="off" placeholder="Search Everywhere" onfocus="openNav('searchBar')" />
+                                <input type="hidden" id="hdSearch" />
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse width12" id="navbarSupportedContent">
+                    <ul class="nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" title="Tools" onclick="openNav('toolBar')" href="javascript:void(0);">
+                                <svg width="21" height="30" viewBox="0 0 31 40">
+                                    <use class="toolsIcon" href="../../Content/custom_icons/toolsIcon.svg#toolsIcon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4 gridIcon blackStar" title="Favourites" href="#favourites">
+                                <svg class="blackStar" width="30" height="32" viewBox="0 0 22 25">
+                                    <use href="../../Content/custom_icons/starIcon.svg#star"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="javascript:void(0);" title="Downloads" onclick="openNav('cartPopup')">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="cart" width="32" height="30" class="cart" viewBox="0 0 55 53">
+                                    <g transform="translate(-1700.373 -27)">
+                                        <g transform="translate(1700.373 40)">
+                                            <path d="M46.921,18.868a1.832,1.832,0,0,0-1.5-.912L15.785,16.565l-1.032-4.126A1.868,1.868,0,0,0,12.925,11H6.876a1.92,1.92,0,0,0,0,3.838h4.6l5.158,20.535-1.266,5.374a1.981,1.981,0,0,0,.328,1.631,1.8,1.8,0,0,0,1.454.72H40.122a1.92,1.92,0,0,0,0-3.838H19.583l.516-2.207,18.757-.912a1.89,1.89,0,0,0,1.594-1.1l6.565-14.393A1.85,1.85,0,0,0,46.921,18.868Z" transform="translate(-5 -11)" />
+                                            <circle cx="4.267" cy="4.267" r="4.267" transform="translate(9.648 31.467)" />
+                                            <circle cx="4.267" cy="4.267" r="4.267" transform="translate(28.39 31.467)" />
+                                        </g>
+                                        <g transform="translate(-11.627)">
+                                            <rect class="cartIcon" width="30" height="30" rx="13" transform="translate(1735 27)" />
+                                            <text class="cartText largeFont_1x" transform="translate(1750 47)">
+                                                <tspan text-anchor="middle" id="cartNum"></tspan>
+                                            </text>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </section>
+
+        <section class="features3 cid-rAi58nOspV pt-6 pb-0" id="features3-1">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </section>
+
+        <section once="footers" class="cid-rAi5R2zbPR" id="footer6-9">
+            <div class="container">
+                <div class="media-container-row align-center gcbc-white">
+                    <div class="col-12">
+                        <a target="_blank" class="gcbc-text mb-0 display-4" href="https://www.sitel.com">
+                            <img src="../../Images/logo-sitel-white.png" alt="Sitel" style="height: 2.2rem;">
+                            <p class="gcbc-text mb-0 smallFont">Empower humans. Enhance brands.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hiddenSection">
+            <div id="toolBar" class="overlayMenu">
+                <span href="javascript:void(0);" class="closeBtn" onclick="closeNav('toolBar');">&times;</span>
+                <div class="overlay-content">
+                    <div class="container">
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="wrapper">
+                                    <a class="btn btn-lg menuBtn" href="javascript:void(0);">
+                                        <h5 class="display-6">Proposal Content</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="wrapper">
+                                    <a class="btn btn-lg menuBtn" href="javascript:void(0);">
+                                        <h5 class="display-6">Pricing & Contracts</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="wrapper">
+                                    <a class="btn btn-lg menuBtn" href="javascript:void(0);">
+                                        <h5 class="display-6">Indicative Pricing</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                <div class="wrapper">
+                                    <a class="btn btn-lg menuBtn" href="javascript:void(0);">
+                                        <h5 class="display-6">FTE Calculator</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" title="Feedback" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 69.484 61.894">
+                    <defs>
+                        <style>
+                            .a_Feed {
+                                fill: url(#a_Feed);
+                            }
+
+                            .b_Feed {
+                                fill: #fff;
+                            }
+                        </style>
+                        <linearGradient id="a_Feed" x1="1" y1="0.847" x2="0.114" y2="0.182" gradientUnits="objectBoundingBox">
+                            <stop offset="0" stop-color="#13b5ea" />
+                            <stop offset="1" stop-color="#00c7c7" />
+                        </linearGradient>
+                    </defs>
+                    <g transform="translate(0)">
+                        <path class="a_Feed" d="M799.916-4693.955a30.948,30.948,0,0,1,30.947-30.947,30.955,30.955,0,0,1,30.2,24.162l8.2,25.2a2.65,2.65,0,0,1-3.072,3.414l-11.241-2.4a30.883,30.883,0,0,1-24.09,11.519A30.947,30.947,0,0,1,799.916-4693.955Z" transform="translate(-799.916 4724.901)" />
+                        <g transform="translate(14.334 27.074)">
+                            <circle class="b_Feed" cx="3.982" cy="3.982" r="3.982" />
+                            <circle class="b_Feed" cx="3.982" cy="3.982" r="3.982" transform="translate(12.741)" />
+                            <circle class="b_Feed" cx="3.982" cy="3.982" r="3.982" transform="translate(25.482)" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div id="progress" class="modal customeLoader">
+                <div class="lds-dual-ring"></div>
+            </div>
+            <div id="searchBar" class="overlayMenu">
+                <span class="closeBtn white" onclick="closeNav('searchBar');">&times;</span>
+                <div class="searchDiv">
+                    <div class="container">
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <%--<div class="col-12 col-md-12 col-lg-12 col-sm-12">
+                                <div class="input-group">
+                                    <input type="text" id="txtSearch" class="form-control input-sm" onkeydown="return (event.keyCode!=13);" placeholder="Search" />
+                                    <input type="hidden" id="hdnSearch" />
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12">
+                                    <p class="mb-1" style="font-size: 0.7rem; color: #E31837;">(Press Enter to submit your Search)</p>
+                                </div>
+                            </div>--%>
+                        </div>
+                    </div>
+                    <div class="container-fluid" style="background-color: #E31837;">
+                        <div class="row firstRow">
+                            <div class="clearfix"></div>
+                            <div class="col-3 col-md-3 col-lg-2 right">
+                                <a href="javascript:void(0);" onclick="ClearAll();" class="clearSearch">Clear All</a>
+                            </div>
+                            <div class="col-9 col-md-9 col-lg-10">
+                                <div id="rptRcntSearchedWord"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 col-md-3 col-lg-2 right">
+                                <span class="badge badge-light chip p-2" id="badgeMoreFilters" onclick="toggleDiv('moreFilters',this);"><i class="fa fa-eye pl-2 pr-2"></i>Show Filters</span>
+                            </div>
+                            <div class="col-9 col-md-9 col-lg-10">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="AND" onchange="fireChange()" checked="checked" /><span class="radioSearch">Match All</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="OR" onchange="fireChange()" /><span class="radioSearch">Match Any</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="moreFilters" style="display: none;">
+                            <div class="row">
+                                <div class="col-3 col-md-3 col-lg-2 right">
+                                </div>
+                                <div class="col-9 col-md-9 col-lg-10">
+                                    <span class="white smallFont">
+                                        <i class="fa fa-info-circle toolTip" aria-hidden="true">
+                                            <span class="toolTipText">
+                                                <i><b>Text / PDF:</b> Text, PDF, Word, Excel and Powerpoint documents</i><br />
+                                                <i><b>Image:</b> Photos, Graphics, Logo (PNG, JPG & Vector)</i><br />
+                                                <i><b>Video:</b> Video Content</i>
+                                            </span>
+                                        </i>
+                                        <span style="padding-left: 7px;">Document Types: </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row lastRow">
+                                <div class="col-3 col-md-3 col-lg-2 right">
+                                </div>
+                                <div class="col-9 col-md-9 col-lg-10">
+                                    <span class="badge badge-light chipButtonInner" onclick="toggleDiv('forTextPDF',this);">PDF</span>
+                                    <span class="badge badge-light chipButtonInner" onclick="toggleDiv('forTextPDF',this);">Word</span>
+                                    <span class="badge badge-light chipButtonInner" onclick="toggleDiv('forTextPDF',this);">Excel</span>
+                                    <span class="badge badge-light chipButtonInner" onclick="toggleDiv('forTextPDF',this);">Powerpoint</span>
+                                    <span class="badge badge-light chipButtonInner" onclick="addSelectedClass(this);">Image</span>
+                                    <span class="badge badge-light chipButtonInner" onclick="addSelectedClass(this);">Video</span>
+                                    <asp:HiddenField ID="hdnMoreFilter" runat="server" />
+                                    <div id="forTextPDF" class="autoHide" style="display: none;">
+                                        <span class="white smallFont">Search by:</span>
+                                        <br />
+                                        <label class="checkbox-inline white smallFont">
+                                            <input type="checkbox" name="docFilterchecked" value="Tags" onchange="fireChange();" /><span class="checkboxSearch">Tags</span>
+                                        </label>
+                                        <label class="checkbox-inline white smallFont">
+                                            <input type="checkbox" name="docFilterchecked" value="Description" onchange="fireChange();" /><span class="checkboxSearch">Description</span>
+                                        </label>
+                                        <label class="checkbox-inline white smallFont">
+                                            <input type="checkbox" name="docFilterchecked" value="FileData" onchange="fireChange();" /><span class="checkboxSearch">Body</span>
+                                        </label>
+                                        <label class="checkbox-inline white smallFont">
+                                            <input type="checkbox" name="docFilterchecked" value="FileName" onchange="fireChange();" /><span class="checkboxSearch">Title</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-1 red_brB p-2">
+                        <div class="row">
+                            <div class="clearfix"></div>
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <h4 class="gcbc-text mb-0"><i class="fa fa-search"></i>Search Result</h4>
+                            </div>
+                            <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                                <div class="input-group">
+                                    <p class="gcbc-text mb-0 mediumFont">Sort By: </p>
+                                    <span class="input-group-addon pointer">
+                                        <select class="dropdown mediumFont" id="ddlsortBy" onchange="fireChange();" name="sortBy">
+                                            <option value="CreatedDate" selected="selected">Published Date</option>
+                                            <option value="FileName">Name</option>
+                                            <option value="UpdatedDate">Date Updated</option>
+                                            <option value="FileType">File Type</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                                <div class="input-group">
+                                    <p class="gcbc-text mb-0 mediumFont">Arrange: </p>
+                                    <span class="input-group-addon pointer">
+                                        <select class="dropdown mediumFont" id="ddlArrange" onchange="fireChange();" name="arrange">
+                                            <option value="asc" selected="selected">Ascending</option>
+                                            <option value="desc">Descending</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                                <div class="input-group">
+                                    <p class="gcbc-text mb-0 mediumFont">Total : </p>
+                                    <span id="spnTotalNumFound" class="input-group-addon dropdown mediumFont"></span>
+                                </div>
+                            </div>
+                            <div class="col-4 col-sm-2 col-md-4 col-lg-5 col-xl-6 rightFloat">
+                                <a class="rightFloat ml-1" title="Preview" href="javascript:void(0);" onclick="togglePreview('forGrid', 'previewGrid');">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id='previewGrid' class="redIcon_SVG previewIcon notSelect" width="20" height="20" viewBox="0 0 27 27">
+                                        <g transform="translate(-42 -26)">
+                                            <rect width="12" height="12" rx="1" transform="translate(57 41)" />
+                                            <rect width="12" height="12" rx="1" transform="translate(42 41)" />
+                                            <rect width="12" height="12" rx="1" transform="translate(57 26)" />
+                                            <rect width="12" height="12" rx="1" transform="translate(42 26)" />
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a class="rightFloat ml-1" title="List" href="javascript:void(0);" onclick="togglePreview('forList', 'previewList');">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id='previewList' class="redIcon_SVG previewIcon" width="30" height="20" viewBox="0 0 30 27">
+                                        <g transform="translate(0 -26)">
+                                            <rect width="30" height="7" rx="1" transform="translate(0 26)" />
+                                            <rect width="30" height="7" rx="1" transform="translate(0 36)" />
+                                            <rect width="30" height="7" rx="1" transform="translate(0 46)" />
+                                        </g>
+                                    </svg>
+                                </a>
+                                <!-- <i class="fa fa-th-large fa-lg ml-1 redIcon rightFloat pointer previewIcon" onclick="togglePreview('forGrid', this);"></i> -->
+                                <!-- <i class="fa fa-th-list fa-lg mr-1 redIcon rightFloat pointer previewIcon" onclick="togglePreview('forList', this);"></i> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-4 scrollContainer">
+                        <div class="row preview" id="forList">
+                        </div>
+                        <div class="row preview" id="forGrid" style="display: none;">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="cartPopup" class="overlayMenu">
+                <span class="closeBtn" onclick="closeNav('cartPopup');">&times;</span>
+                <div class="container mt-1 red_brB p-2">
+                    <div class="row">
+                        <div class="clearfix"></div>
+                        <div class="col-12 col-md-12 col-lg-12">
+                            <h2 class="gcbc-text mb-0 customRed display-6 leftFloat"><b>Your Cart</b></h2>
+                            <%--<button class="btn redIcon_BG m-0 mt-2 pt-1 pb-1 pr-4 pl-4 mediumFont rightFloat" onclick="return downloadAll();">Download All</button>--%>
+                            <button class="btn redIcon_BG m-0 mt-2 pt-1 pb-1 pr-4 pl-4 mediumFont rightFloat" onclick="return downloadAll();">Download All</button>
+                        </div>
+                        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 mt-1">
+                            <div class="input-group">
+                                <p class="gcbc-text mb-0 mediumFont leftFloat">
+                                    Bulk Actions:
+                                </p>
+                                <a class="customRed pointer mediumFont leftFloat ml-2" href="javascript:void(0);">Email Selected</a>
+                                <a class="customRed pointer mediumFont leftFloat ml-2" href="javascript:void(0);">Remove Selected</a>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-2 col-md-4 col-lg-5 col-xl-6 rightFloat">
+                            <a class="rightFloat ml-1" title="Preview" href="javascript:void(0);" onclick="togglePreview('forGridCart', 'previewGridCart');">
+                                <svg xmlns="http://www.w3.org/2000/svg" id='previewGridCart' class="redIcon_SVG previewIcon notSelect" width="20" height="20" viewBox="0 0 27 27">
+                                    <g transform="translate(-42 -26)">
+                                        <rect width="12" height="12" rx="1" transform="translate(57 41)" />
+                                        <rect width="12" height="12" rx="1" transform="translate(42 41)" />
+                                        <rect width="12" height="12" rx="1" transform="translate(57 26)" />
+                                        <rect width="12" height="12" rx="1" transform="translate(42 26)" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <a class="rightFloat ml-1" title="List" href="javascript:void(0);" onclick="togglePreview('forListCart', 'previewListCart');">
+                                <svg xmlns="http://www.w3.org/2000/svg" id='previewListCart' class="redIcon_SVG previewIcon" width="30" height="20" viewBox="0 0 30 27">
+                                    <g transform="translate(0 -26)">
+                                        <rect width="30" height="7" rx="1" transform="translate(0 26)" />
+                                        <rect width="30" height="7" rx="1" transform="translate(0 36)" />
+                                        <rect width="30" height="7" rx="1" transform="translate(0 46)" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container mt-4 scrollContainer">
+                    <div class="row preview" id="forListCart">
+                    </div>
+                    <div class="row preview" id="forGridCart" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+    <script>
+       
+       
+    </script>
+    <script>
+        var maxRow = 30;
+        var startIndex = 0;
+        var numFound = 0;
+        var timeout;
+        function scrollDiv(element) {
+            $(".lnkloadmore").remove();
+            $("#progress").show();
+            //console.log("Max Row: " + maxRow + " Start Index: " + startIndex);
+            var value = $("#txtSearch").val();
+            bindAPI(value);
+            $("#progress").hide();
+        }
+
+        function bindAPI(searchtext) {
+            
+            clearTimeout(timeout);
+            timeout = setTimeout(function () {
+                debugger;
+                $("#progress").show();
+                var AndOr = $("input[name='optradio']:checked").val();
+                var TagsDescBdy = '';
+                if ($("input[name='docFilterchecked']:checked").length!="0")
+                {
+                    //var docFilterchecked = $("input[name='docFilterchecked']:checked").length;
+                    var docFilterchecked = $("input[name='docFilterchecked']:checked")
+                    for (var i = 0; i < docFilterchecked.length; i++) {
+                        if (AndOr == "OR") {
+                            TagsDescBdy = TagsDescBdy + '+AND+' + docFilterchecked[i].value + '%3A' + searchtext.replace(/ /g, '%20');
+                        }
+                        else {
+                            TagsDescBdy = TagsDescBdy + '+AND+' + docFilterchecked[i].value + '%3A%22' + searchtext.replace(/ /g, '%20') + '%22';
+                        }
+                    }
+                }
+                var MoreFilter = $('#hdnMoreFilter').val();
+                var url = "https://growthcenter-search.eai.sitel-apps.com/solr/EaiGrowthCenter/select?q=";
+                var search = "";
+                var fileFormat = "";
+                if (AndOr == "OR") {
+                    if (MoreFilter == "PDF") {
+                        search = "(Text%3A" + searchtext.replace(/ /g, '%20') + TagsDescBdy+ ")+AND+FileType%3A.pdf";
+                    }
+                    else if (MoreFilter == "Word") {
+                        search = "(Text%3A" + searchtext.replace(/ /g, '%20') + TagsDescBdy + ")+AND+(FileType%3A.doc+OR+FileType%3A.docx)+%0A";
+                    }
+                    else if (MoreFilter == "Excel") {
+                        search = "(Text%3A" + searchtext.replace(/ /g, '%20') + TagsDescBdy + ")+AND+(FileType%3A.xls+OR+FileType%3A.xlsx)+%0A";
+                    }
+                    else if (MoreFilter == "Powerpoint") {
+                        search = "(Text%3A" + searchtext.replace(/ /g, '%20') + TagsDescBdy + ")+AND+(FileType%3A.pptx+OR+FileType%3A.ppt)+%0A";
+                    }
+                    else if (MoreFilter == "Image" || MoreFilter == "Video") {
+                        url = "http://us145lxsiddev01.nac.sitel-world.net:8983/solr/BrandCenter/select?q="
+                        search = "(+Thesaurus%3A*" + (searchtext.replace(/ /g, '*+OR+Thesaurus%3A*')) + "*+)+OR+(+FileName%3A*" + (searchtext.replace(/ /g, '*+OR+FileName%3A*')) + "*+)";
+                        fileFormat = "fq=FileFormat%3A" + MoreFilter + "";
+                    }
+                    else {
+                        search = "(Text%3A" + searchtext.replace(/ /g, '%20') + ")";
+                        fileFormat = "";
+                    }
+                }
+                else {
+                    if (MoreFilter == "PDF") {
+                        search = "(Text%3A%22" + searchtext.replace(/ /g, '%20') + "%22"+TagsDescBdy+")+AND+FileType%3A.pdf";
+                    }
+                    else if (MoreFilter == "Word") {
+                        search = "(Text%3A%22" + searchtext.replace(/ /g, '%20') + "%22" + TagsDescBdy + ")+AND+(FileType%3A.doc+OR+FileType%3A.docx)+%0A";
+                    }
+                    else if (MoreFilter == "Excel") {
+                        search = "(Text%3A%22" + searchtext.replace(/ /g, '%20') + "%22" + TagsDescBdy + ")+AND+(FileType%3A.xls+OR+FileType%3A.xlsx)+%0A";
+                    }
+                    else if (MoreFilter == "Powerpoint") {
+                        search = "(Text%3A%22" + searchtext.replace(/ /g, '%20') + "%22" + TagsDescBdy + ")+AND+(FileType%3A.pptx+OR+FileType%3A.ppt)+%0A";
+                    }
+                    else if (MoreFilter == "Image" || MoreFilter == "Video") {
+                        url = "http://us145lxsiddev01.nac.sitel-world.net:8983/solr/BrandCenter/select?q="
+                        search = "Thesaurus%3A*" + searchtext.replace(/ /g, '*') + "*+OR+FileName%3A*" + searchtext.replace(/ /g, '*') + "*";
+                        fileFormat = "fq=FileFormat%3A" + MoreFilter + "";
+                    }
+                    else {
+                        search = "(Text%3A%22" + searchtext.replace(/ /g, '%20') + "%22)";
+                        fileFormat = "";
+                    }
+
+                }
+                var rows = "rows=" + maxRow;
+                var start = "start=" + startIndex
+                var wt = "wt=json";
+                var IsPublished = "fq=IsPublished:true";
+                var indent = "indent=true";
+                var apiURL = url + search + "&" + fileFormat + "&" + rows + "&" + start + "&" + IsPublished + "&" + wt + "&" + indent;
+                var params = '{"api":"' + apiURL.toString() + '"}';
+                $.ajax({
+                    url: "Home.aspx/getApi",
+                    data: params,
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        onSuccessApi(response.d);
+                    },
+                    error: function (errormessage) {
+                        console.log(errormessage);
+                        $("#progress").hide();
+                    }
+                });
+            }, 0);
+            $("#progress").hide();
+        }
+
+
+
+    </script>
+    <script src="../../Scripts/jquery.min.js?v=1"></script>
+    <script src="../../Scripts/popper.min.js?v=1"></script>
+    <script src="../../Scripts/tether.min.js?v=1"></script>
+    <script src="../../Scripts/bootstrap.min.js?v=1"></script>
+    <script src="../../Scripts/smooth-scroll.js?v=1"></script>
+    <script src="../../Scripts/nav-dropdown.js?v=1"></script>
+    <script src="../../Scripts/navbar-dropdown.js?v=1"></script>
+    <script src="../../Scripts/jquery.touch-swipe.min.js?v=1"></script>
+    <script src="../../Scripts/tabs.js?v=1"></script>
+    <script src="../../Scripts/jquery.data-tables.min.js?v=1"></script>
+    <script src="../../Scripts/data-tables.bootstrap4.min.js?v=1"></script>
+    <script src="../../Scripts/theme.js?v=1"></script>
+
+
+    <script src="../../Scripts/Site.js?v=1"></script>
+    <script src="../../Scripts/PP_BindHtml.js?v=1"></script>
+    <script src="../../Scripts/PP_AjaxCall.js?v=1"></script>
+    <script src="../../Scripts/PP_Bindload.js?v=1"></script>
+</body>
+</html>

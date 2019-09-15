@@ -1,0 +1,171 @@
+.browseIcon {
+	fill: #E31837;
+	cursor: pointer;
+}
+
+.browseIcon:hover {
+	fill: #000000;
+}
+
+.cartAdd {
+	fill: #000000;
+	cursor: pointer;
+}
+
+.cartAdd:hover {
+	fill: #92da46;
+}
+
+.cartAdd:hover .cartIconAdd {
+	fill: #000000;
+}
+
+.cartIconAdd {
+	fill: #92da46;
+}
+
+.cartTextAdd {
+	fill:#fff;
+	font-size: 1.5rem;
+	font-family:Calibri;
+}
+
+.cart {
+	fill: #000000;
+	cursor: pointer;
+}
+
+.cart:hover {
+	fill: #e31837;
+}
+
+.cart:hover .cartIcon {
+	fill: #000000;
+}
+
+.cartIcon {
+	fill: #e31837;
+}
+
+.cartText {
+	fill:#fff;
+	font-size: 1.4rem;
+	font-family:Calibri;
+}
+
+.downloadIcon {
+	fill: #000000;
+	cursor: pointer;
+}
+
+.downloadIcon:hover {
+	fill: #E31837;
+}
+
+.feedbackIcon {
+	fill: url(#feedbackIcon_ID);
+}
+
+.feedbackIcon:hover {
+	fill: url(#feedbackIconHover);
+}
+
+.fileIcon {
+	background-color: #e2e2e2; 
+}
+
+.hamburger_Lines {
+	fill: #fff;
+	cursor: pointer;
+}
+
+.hamburger_Lines:hover {
+	fill: #000;
+}
+
+.previewGrid {
+	cursor: pointer;
+	fill: #BEBEBE;
+}
+
+.previewGrid:hover {
+	fill: #707070;
+}
+
+.previewGrid.active {
+	fill: #E31837;
+}
+
+.previewGrid.active:hover {
+	fill: #000000;
+}
+
+.previewList {
+	cursor: pointer;
+	fill: #BEBEBE;
+}
+
+.previewList:hover {
+	fill: #707070;
+}
+
+.previewList.active {
+	fill: #E31837;
+}
+
+.previewList.active:hover {
+	fill: #000000;
+}
+
+.searchIcon {
+	fill: #000000;
+	cursor: pointer;
+}
+
+.searchIcon:hover {
+	fill: #E31837;
+}
+
+.star {
+	fill: #fff;
+	stroke: #000000;
+	cursor: pointer;
+}
+
+.whiteStar {
+	fill: #fff;
+	stroke: #fff;
+}
+
+.blackStar {
+	fill: #000000;
+	stroke: #000000;
+	cursor: pointer;
+}
+
+.blackStar:hover {
+	fill: #000000;
+}
+
+.star:hover {
+	fill: #E31837;
+}
+
+.star.active {
+	fill: #E31837;
+	stroke: #000000;
+	cursor: pointer;
+}
+
+.star.active:hover {
+	fill: #fff;
+}
+
+.toolsIcon {
+	fill: #000000;
+	cursor: pointer;
+}
+
+.toolsIcon:hover {
+	fill: #E31837;
+}
